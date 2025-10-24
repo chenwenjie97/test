@@ -57,13 +57,20 @@
             ]
           },
           {
-            "group": "Endpoint examples",
+            "group": "AI",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
-            ]
+              "api-reference/endpoint/ai/apiRecordResult",
+              "api-reference/endpoint/ai/create"
+            ],
+            "openapi": "api-reference/openapi-ai.json"
+          },
+          {
+            "group": "PMOCK",
+            "pages": [
+              "api-reference/endpoint/pmock/get",
+              "api-reference/endpoint/pomck/create"
+            ],
+            "openapi": "api-reference/openapi-pmock.json"
           }
         ]
       }
