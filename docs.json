@@ -58,19 +58,18 @@
           },
           {
             "group": "AI",
+            "openapi": "openapi/ai.json",
             "pages": [
               "api-reference/endpoint/ai/apiRecordResult",
               "api-reference/endpoint/ai/create"
-            ],
-            "openapi": "api-reference/openapi-ai.json"
+            ]
           },
           {
             "group": "PMOCK",
             "pages": [
               "api-reference/endpoint/pmock/get",
-              "api-reference/endpoint/pomck/create"
-            ],
-            "openapi": "api-reference/openapi-pmock.json"
+              "api-reference/endpoint/pmock/create"
+            ]
           }
         ]
       }
