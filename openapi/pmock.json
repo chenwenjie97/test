@@ -6,7 +6,7 @@
     },
     "servers": [
         {
-            "url": "http://localhost:19876/chameleon-server",
+            "url": "https://user.pmock.com/api",
             "description": "Generated server url"
         }
     ],

@@ -64,6 +64,7 @@
           {
             "group": "PMOCK",
             "pages": [
+              "api-reference/pmock-api-introduction",
               "api-reference/pmock/get-task-info-list",
               "api-reference/pmock/power-off",
               "api-reference/pmock/power-on",
