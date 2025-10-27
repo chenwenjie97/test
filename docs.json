@@ -58,17 +58,22 @@
           },
           {
             "group": "AI",
-            "openapi": "openapi/ai.json",
             "pages": [
-              "api-reference/endpoint/ai/apiRecordResult",
-              "api-reference/endpoint/ai/create"
-            ]
-          },
-          {
-            "group": "PMOCK",
-            "pages": [
-              "api-reference/endpoint/pmock/get",
-              "api-reference/endpoint/pmock/create"
+              "api-reference/ai-api-introduction",
+              "api-reference/ai/get-task-result",
+              "api-reference/ai/sn-generate-wav",
+              "api-reference/ai/sn-upsample-tags",
+              "api-reference/ai/sn-generate-mp4",
+              "api-reference/ai/sn-generate-lyrics",
+              "api-reference/ai/sn-get-lyrics-and-audio-timeline",
+              "api-reference/ai/sn-get-downbeats",
+              "api-reference/ai/sn-create-persona",
+              "api-reference/ai/sn-upload-audio",
+              "api-reference/ai/sn-generate-audio",
+              "api-reference/ai/sn-connect-audio",
+              "api-reference/ai/sa-generate-video",
+              "api-reference/ai/gi-generate-video",
+              "api-reference/ai/gi-generate-image"
             ]
           }
         ]
