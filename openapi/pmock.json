@@ -1,0 +1,2774 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "OpenAPI definition",
+        "version": "v0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:19876/chameleon-server",
+            "description": "Generated server url"
+        }
+    ],
+    "tags": [
+        {
+            "name": "开放能力",
+            "description": "开放能力"
+        }
+    ],
+    "paths": {
+        "/open/api/task/info/list": {
+            "post": {
+                "summary": "get task info list",
+                "description": "batch query task information (up to 100 items per query)",
+                "operationId": "taskInfo",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/TaskStatusListReqVO"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RListTaskInfoResVO"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/open/api/phone/stop": {
+            "post": {
+                "summary": "power off",
+                "description": "phone power off",
+                "operationId": "stop",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PhoneReqVO"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RApiTaskResVO"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/open/api/phone/start": {
+            "post": {
+                "summary": "power on",
+                "description": "phone power on",
+                "operationId": "start",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PhoneReqVO"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RPhoneStartResVO"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/open/api/phone/setNetwork": {
+            "post": {
+                "summary": "phone network settings",
+                "description": "phone network settings",
+                "operationId": "setNetwork",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PhoneSetNetworkReqVO"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RVoid"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/open/api/phone/restart": {
+            "post": {
+                "summary": "restart phone",
+                "description": "restart phone",
+                "operationId": "restart",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PhoneReqVO"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RApiTaskResVO"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/open/api/phone/reset": {
+            "post": {
+                "summary": "restore factory settings",
+                "description": "phone restore factory settings",
+                "operationId": "reset",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PhoneReqVO"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RApiTaskResVO"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/open/api/phone/remove": {
+            "post": {
+                "summary": "delete phone",
+                "description": "delete phone",
+                "operationId": "remove",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PhoneReqVO"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RVoid"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/open/api/phone/oneNew": {
+            "post": {
+                "summary": "one click new machine",
+                "description": "one click new machine",
+                "operationId": "oneNew",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PhoneReqVO"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RApiTaskResVO"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/open/api/phone/minio/init/task": {
+            "post": {
+                "summary": "initialize upload task",
+                "description": "initialize upload task",
+                "operationId": "initTask",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UploadTaskInitReqVO"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RUploadTaskInfoVO"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/open/api/phone/getRemoteToken": {
+            "post": {
+                "summary": "get remote token",
+                "description": "get remote connection token",
+                "operationId": "getRemoteToken",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ApiRemoteTokenReqVO"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RListApiRemoteTokenResVO"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/open/api/phone/getAdbInfo": {
+            "post": {
+                "summary": "get ADB information",
+                "description": "obtain ADB information",
+                "operationId": "getAdbInfo",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PhoneGetAdbInfoVO"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RPhoneAdbInfoResVO"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/open/api/phone/file/scan": {
+            "post": {
+                "summary": "phone file scan",
+                "description": "scan the mobile file directory",
+                "operationId": "fileScan",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ApiPhoneFileScanReqVO"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RApiPhoneFileScanPageResVO"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/open/api/phone/file/download": {
+            "post": {
+                "summary": "phone file download",
+                "description": "download mobile files to local device",
+                "operationId": "fileDownload",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ApiPhoneFileDownloadReqVO"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RApiPhoneFileDownloadResVO"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/open/api/phone/create": {
+            "post": {
+                "summary": "create phone",
+                "description": "create a mobile phone",
+                "operationId": "create",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PhoneCreateReqVO"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RVoid"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/open/api/phone/completeAndPush": {
+            "post": {
+                "summary": "complete and push",
+                "description": "merge shards&push to mobile phone",
+                "operationId": "completeAndPush",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ApiUploadMinIOReqVO"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RApiUploadFileResVO"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/open/api/phone/clear": {
+            "post": {
+                "summary": "phone accelerate",
+                "description": "phone accelerate",
+                "operationId": "clear",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PhoneReqVO"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RVoid"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/open/api/brand/list": {
+            "post": {
+                "summary": "get list brand",
+                "description": "get a list of supported mobile phone brands",
+                "operationId": "listBrand",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PhoneBrandListReqVO"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RListPhoneBrandListResVO"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/open/api/app/operate": {
+            "post": {
+                "summary": "phone app operation",
+                "description": "operation application (start/stop/restart/uninstall)",
+                "operationId": "operateApp",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PhoneAppOperateReqVO"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RVoid"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/open/api/app/list": {
+            "post": {
+                "summary": "get app list",
+                "description": "get app List",
+                "operationId": "appList",
+                "parameters": [
+                    {
+                        "name": "query",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/PageQuery"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PhoneAppListReqVO"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TableDataInfoAppListV2ResVO"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/open/api/app/listUpgradeApp": {
+            "post": {
+                "summary": "get list can upgrade app",
+                "description": "updated list query",
+                "operationId": "listUpgradeApp",
+                "parameters": [
+                    {
+                        "name": "query",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/PageQuery"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PhoneReqVO"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TableDataInfoAppListV2ResVO"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/open/api/app/install": {
+            "post": {
+                "summary": "phone install app",
+                "description": "phone install application",
+                "operationId": "installApp",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PhoneAppInstallReqVO"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RApiTaskResVO"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/open/api/product/list": {
+            "get": {
+                "summary": "get product list",
+                "description": "get product information list",
+                "operationId": "listProduct",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RListProductInfoVO"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/open/api/phone/task/status": {
+            "get": {
+                "summary": "query task status",
+                "description": "check the status of phone tasks",
+                "operationId": "selectPhoneTaskStatus",
+                "parameters": [
+                    {
+                        "name": "reqVO",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/SelectPhoneTaskStatusReqVO"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RPhoneTaskStatusResVO"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/open/api/phone/resolutionList": {
+            "get": {
+                "summary": "phone resolution list",
+                "description": "phone resolution list",
+                "operationId": "getScreenResolution",
+                "parameters": [
+                    {
+                        "name": "reqVO",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/PhoneResolutionListVOReqVO"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/PhoneResolutionListResVO"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/open/api/phone/list": {
+            "get": {
+                "summary": "phone page list",
+                "description": "phone page list",
+                "operationId": "pageList",
+                "parameters": [
+                    {
+                        "name": "reqVO",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/PhonePageListReqVO"
+                        }
+                    },
+                    {
+                        "name": "query",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/PageQuery"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TableDataInfoPhonePageListResVO"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/open/api/app/categoryList": {
+            "get": {
+                "summary": "get app category list",
+                "description": "get application classification list",
+                "operationId": "appCategoryList",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RListAppCategoryVO"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "R": {
+                "required": [
+                    "code",
+                    "msg",
+                    "status",
+                    "traceId"
+                ],
+                "type": "object",
+                "properties": {
+                    "traceId": {
+                        "type": "string"
+                    },
+                    "code": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "msg": {
+                        "type": "string"
+                    },
+                    "data": {
+                        "type": "object"
+                    },
+                    "status": {
+                        "type": "string"
+                    }
+                }
+            },
+            "TaskStatusListReqVO": {
+                "required": [
+                    "phoneId",
+                    "taskIds"
+                ],
+                "type": "object",
+                "properties": {
+                    "phoneId": {
+                        "type": "integer",
+                        "description": "Phone ID",
+                        "format": "int64"
+                    },
+                    "taskIds": {
+                        "maxLength": 100,
+                        "maxItems": 100,
+                        "minItems": 0,
+                        "type": "array",
+                        "description": "List of task IDs",
+                        "items": {
+                            "maxLength": 100,
+                            "type": "integer",
+                            "description": "List of task IDs",
+                            "format": "int64"
+                        }
+                    }
+                }
+            },
+            "RListTaskInfoResVO": {
+                "required": [
+                    "code",
+                    "msg",
+                    "status",
+                    "traceId"
+                ],
+                "type": "object",
+                "properties": {
+                    "traceId": {
+                        "type": "string"
+                    },
+                    "code": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "msg": {
+                        "type": "string"
+                    },
+                    "data": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/TaskInfoResVO"
+                        }
+                    },
+                    "status": {
+                        "type": "string"
+                    }
+                }
+            },
+            "TaskInfoResVO": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "description": "Task ID",
+                        "format": "int64"
+                    },
+                    "phoneId": {
+                        "type": "integer",
+                        "description": "Associated phone ID",
+                        "format": "int64"
+                    },
+                    "teamId": {
+                        "type": "integer",
+                        "description": "Enterprise ID",
+                        "format": "int64"
+                    },
+                    "userId": {
+                        "type": "integer",
+                        "description": "Enterprise owner user ID",
+                        "format": "int64"
+                    },
+                    "opType": {
+                        "type": "string",
+                        "description": "Task type"
+                    },
+                    "apkPkg": {
+                        "type": "string",
+                        "description": "Application package name"
+                    },
+                    "apkVersionCode": {
+                        "type": "integer",
+                        "description": "Application version code",
+                        "format": "int32"
+                    },
+                    "downloadUrl": {
+                        "type": "string",
+                        "description": "Download URL"
+                    },
+                    "status": {
+                        "type": "integer",
+                        "description": "Task status (refer to TaskStatusEnum)",
+                        "format": "int32"
+                    },
+                    "startTime": {
+                        "type": "string",
+                        "description": "Task start time",
+                        "format": "date-time"
+                    },
+                    "endTime": {
+                        "type": "string",
+                        "description": "Task end time",
+                        "format": "date-time"
+                    },
+                    "remark": {
+                        "type": "string",
+                        "description": "Remarks"
+                    }
+                }
+            },
+            "PhoneReqVO": {
+                "required": [
+                    "id"
+                ],
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "description": "Phone ID",
+                        "format": "int64"
+                    }
+                }
+            },
+            "ApiTaskResVO": {
+                "type": "object",
+                "properties": {
+                    "taskId": {
+                        "type": "integer",
+                        "description": "Task ID",
+                        "format": "int64"
+                    }
+                }
+            },
+            "RApiTaskResVO": {
+                "required": [
+                    "code",
+                    "msg",
+                    "status",
+                    "traceId"
+                ],
+                "type": "object",
+                "properties": {
+                    "traceId": {
+                        "type": "string"
+                    },
+                    "code": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "msg": {
+                        "type": "string"
+                    },
+                    "data": {
+                        "$ref": "#/components/schemas/ApiTaskResVO"
+                    },
+                    "status": {
+                        "type": "string"
+                    }
+                }
+            },
+            "PhoneStartResVO": {
+                "type": "object",
+                "properties": {
+                    "screenWidth": {
+                        "type": "string",
+                        "description": "Screen width resolution"
+                    },
+                    "screenHeight": {
+                        "type": "string",
+                        "description": "Screen height resolution"
+                    },
+                    "taskId": {
+                        "type": "integer",
+                        "description": "Task ID",
+                        "format": "int64"
+                    }
+                }
+            },
+            "RPhoneStartResVO": {
+                "required": [
+                    "code",
+                    "msg",
+                    "status",
+                    "traceId"
+                ],
+                "type": "object",
+                "properties": {
+                    "traceId": {
+                        "type": "string"
+                    },
+                    "code": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "msg": {
+                        "type": "string"
+                    },
+                    "data": {
+                        "$ref": "#/components/schemas/PhoneStartResVO"
+                    },
+                    "status": {
+                        "type": "string"
+                    }
+                }
+            },
+            "PhoneSetNetworkReqVO": {
+                "required": [
+                    "id"
+                ],
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "description": "Phone ID",
+                        "format": "int64"
+                    },
+                    "networkId": {
+                        "type": "integer",
+                        "description": "Network ID",
+                        "format": "int64"
+                    },
+                    "host": {
+                        "type": "string",
+                        "description": "Proxy host"
+                    },
+                    "port": {
+                        "type": "integer",
+                        "description": "Proxy port",
+                        "format": "int32"
+                    },
+                    "account": {
+                        "type": "string",
+                        "description": "Proxy account"
+                    },
+                    "password": {
+                        "type": "string",
+                        "description": "Proxy password"
+                    },
+                    "type": {
+                        "type": "string",
+                        "description": "Proxy type: 1.socks5 2.https 3.http"
+                    },
+                    "way": {
+                        "type": "string",
+                        "description": "Usage method: 1.Static IP 2.Dynamic IP"
+                    },
+                    "region": {
+                        "type": "string",
+                        "description": "Region"
+                    },
+                    "status": {
+                        "type": "integer",
+                        "description": "Status",
+                        "format": "int32"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Network name"
+                    },
+                    "ip": {
+                        "type": "string",
+                        "description": "Actual IP address"
+                    },
+                    "countryName": {
+                        "type": "string",
+                        "description": "Country name"
+                    },
+                    "countryCode": {
+                        "type": "string",
+                        "description": "Country code"
+                    },
+                    "latitude": {
+                        "type": "string",
+                        "description": "Latitude"
+                    },
+                    "longitude": {
+                        "type": "string",
+                        "description": "Longitude"
+                    },
+                    "language": {
+                        "type": "string",
+                        "description": "Language"
+                    },
+                    "timezone": {
+                        "type": "string",
+                        "description": "Timezone"
+                    },
+                    "udp": {
+                        "type": "integer",
+                        "description": "Whether UDP is enabled (1=enabled, 0=disabled)",
+                        "format": "int32"
+                    },
+                    "tcp": {
+                        "type": "integer",
+                        "description": "Whether TCP is enabled (1=enabled, 0=disabled)",
+                        "format": "int32"
+                    },
+                    "remark": {
+                        "type": "string",
+                        "description": "Remarks"
+                    },
+                    "groupId": {
+                        "type": "integer",
+                        "description": "Network group ID",
+                        "format": "int64",
+                        "default": -1
+                    },
+                    "detectDataType": {
+                        "type": "integer",
+                        "description": "Detection data type: 1-Follow IP 2-Custom",
+                        "format": "int32"
+                    }
+                }
+            },
+            "RVoid": {
+                "required": [
+                    "code",
+                    "msg",
+                    "status",
+                    "traceId"
+                ],
+                "type": "object",
+                "properties": {
+                    "traceId": {
+                        "type": "string"
+                    },
+                    "code": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "msg": {
+                        "type": "string"
+                    },
+                    "data": {
+                        "type": "object"
+                    },
+                    "status": {
+                        "type": "string"
+                    }
+                }
+            },
+            "UploadTaskInitReqVO": {
+                "required": [
+                    "chunkSize",
+                    "fileName",
+                    "identifier",
+                    "phoneId",
+                    "totalSize",
+                    "uploadType"
+                ],
+                "type": "object",
+                "properties": {
+                    "identifier": {
+                        "type": "string",
+                        "description": "File unique identifier (MD5)"
+                    },
+                    "totalSize": {
+                        "maximum": 5368709120,
+                        "minimum": 1,
+                        "type": "integer",
+                        "description": "Total file size in bytes (max 5GB)",
+                        "format": "int32"
+                    },
+                    "chunkSize": {
+                        "type": "integer",
+                        "description": "Chunk size in bytes (min 30MB, max 300MB)",
+                        "format": "int32"
+                    },
+                    "fileName": {
+                        "maxLength": 60,
+                        "minLength": 0,
+                        "type": "string",
+                        "description": "File name (max 60 characters)"
+                    },
+                    "uploadType": {
+                        "type": "integer",
+                        "description": "Upload type: 1=APP upload, 2=Temporary file upload, 3=Advanced file import",
+                        "format": "int32",
+                        "enum": [
+                            1,
+                            2,
+                            3
+                        ]
+                    },
+                    "phoneId": {
+                        "type": "integer",
+                        "description": "Phone ID",
+                        "format": "int64"
+                    }
+                }
+            },
+            "PartSummary": {
+                "type": "object",
+                "properties": {
+                    "partNumber": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "lastModified": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "size": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "etag": {
+                        "type": "string"
+                    }
+                }
+            },
+            "RUploadTaskInfoVO": {
+                "required": [
+                    "code",
+                    "msg",
+                    "status",
+                    "traceId"
+                ],
+                "type": "object",
+                "properties": {
+                    "traceId": {
+                        "type": "string"
+                    },
+                    "code": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "msg": {
+                        "type": "string"
+                    },
+                    "data": {
+                        "$ref": "#/components/schemas/UploadTaskInfoVO"
+                    },
+                    "status": {
+                        "type": "string"
+                    }
+                }
+            },
+            "UploadTaskInfoVO": {
+                "type": "object",
+                "properties": {
+                    "finished": {
+                        "type": "boolean",
+                        "description": "Whether the upload is complete (whether the chunks have been merged)"
+                    },
+                    "path": {
+                        "type": "string",
+                        "description": "File path/URL"
+                    },
+                    "taskRecord": {
+                        "$ref": "#/components/schemas/UploadTaskVO"
+                    }
+                }
+            },
+            "UploadTaskVO": {
+                "type": "object",
+                "properties": {
+                    "teamId": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "uploadId": {
+                        "type": "string"
+                    },
+                    "fileIdentifier": {
+                        "type": "string"
+                    },
+                    "fileName": {
+                        "type": "string"
+                    },
+                    "bucketName": {
+                        "type": "string"
+                    },
+                    "objectKey": {
+                        "type": "string"
+                    },
+                    "totalSize": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "chunkSize": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "chunkNum": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "expireTime": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "exitPartList": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/PartSummary"
+                        }
+                    }
+                },
+                "description": "Upload task record information"
+            },
+            "ApiRemoteTokenReqVO": {
+                "required": [
+                    "phoneIds"
+                ],
+                "type": "object",
+                "properties": {
+                    "phoneIds": {
+                        "minLength": 1,
+                        "maxItems": 2147483647,
+                        "minItems": 1,
+                        "type": "array",
+                        "description": "List of phone IDs",
+                        "items": {
+                            "minLength": 1,
+                            "type": "integer",
+                            "description": "List of phone IDs",
+                            "format": "int64"
+                        }
+                    },
+                    "forceKick": {
+                        "type": "boolean",
+                        "description": "Whether to force kick out",
+                        "default": true
+                    }
+                }
+            },
+            "ApiRemoteTokenResVO": {
+                "type": "object",
+                "properties": {
+                    "phoneId": {
+                        "type": "integer",
+                        "description": "Phone ID",
+                        "format": "int64"
+                    },
+                    "teamId": {
+                        "type": "integer",
+                        "description": "Team ID",
+                        "format": "int64"
+                    },
+                    "status": {
+                        "type": "integer",
+                        "description": "Phone status",
+                        "format": "int32"
+                    },
+                    "token": {
+                        "type": "object",
+                        "description": "Authentication token"
+                    },
+                    "errorMsg": {
+                        "type": "string",
+                        "description": "Error message"
+                    },
+                    "chargeType": {
+                        "type": "integer",
+                        "description": "Billing type",
+                        "format": "int32"
+                    },
+                    "nextPayTime": {
+                        "type": "string",
+                        "description": "Next payment time",
+                        "format": "date-time"
+                    }
+                }
+            },
+            "RListApiRemoteTokenResVO": {
+                "required": [
+                    "code",
+                    "msg",
+                    "status",
+                    "traceId"
+                ],
+                "type": "object",
+                "properties": {
+                    "traceId": {
+                        "type": "string"
+                    },
+                    "code": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "msg": {
+                        "type": "string"
+                    },
+                    "data": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/ApiRemoteTokenResVO"
+                        }
+                    },
+                    "status": {
+                        "type": "string"
+                    }
+                }
+            },
+            "PhoneGetAdbInfoVO": {
+                "required": [
+                    "id"
+                ],
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "description": "Phone ID",
+                        "format": "int64"
+                    }
+                }
+            },
+            "PhoneAdbInfoResVO": {
+                "type": "object",
+                "properties": {
+                    "phoneId": {
+                        "type": "integer",
+                        "description": "Phone ID",
+                        "format": "int64"
+                    },
+                    "adbIp": {
+                        "type": "string",
+                        "description": "ADB server IP address"
+                    },
+                    "adbPort": {
+                        "type": "string",
+                        "description": "ADB server port"
+                    },
+                    "adbPassword": {
+                        "type": "string",
+                        "description": "ADB password"
+                    }
+                }
+            },
+            "RPhoneAdbInfoResVO": {
+                "required": [
+                    "code",
+                    "msg",
+                    "status",
+                    "traceId"
+                ],
+                "type": "object",
+                "properties": {
+                    "traceId": {
+                        "type": "string"
+                    },
+                    "code": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "msg": {
+                        "type": "string"
+                    },
+                    "data": {
+                        "$ref": "#/components/schemas/PhoneAdbInfoResVO"
+                    },
+                    "status": {
+                        "type": "string"
+                    }
+                }
+            },
+            "ApiPhoneFileScanReqVO": {
+                "required": [
+                    "phoneId"
+                ],
+                "type": "object",
+                "properties": {
+                    "pageSize": {
+                        "type": "integer",
+                        "description": "Number of records displayed per page",
+                        "format": "int32"
+                    },
+                    "pageNum": {
+                        "type": "integer",
+                        "description": "Current page count",
+                        "format": "int32"
+                    },
+                    "phoneId": {
+                        "type": "integer",
+                        "description": "Phone ID",
+                        "format": "int64"
+                    },
+                    "parentDir": {
+                        "type": "string",
+                        "description": "Parent directory"
+                    }
+                }
+            },
+            "ApiPhoneFileInfoResVO": {
+                "type": "object",
+                "properties": {
+                    "path": {
+                        "type": "string",
+                        "description": "File or directory path"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "File or directory name"
+                    },
+                    "type": {
+                        "type": "integer",
+                        "description": "Type: 1=Directory, 2=File",
+                        "format": "int32"
+                    },
+                    "size": {
+                        "type": "string",
+                        "description": "File size in bytes"
+                    },
+                    "convertSize": {
+                        "type": "string",
+                        "description": "Human-readable converted size"
+                    }
+                },
+                "description": "list data"
+            },
+            "ApiPhoneFileScanPageResVO": {
+                "type": "object",
+                "properties": {
+                    "parentDir": {
+                        "type": "string"
+                    },
+                    "fileList": {
+                        "$ref": "#/components/schemas/TableDataInfoApiPhoneFileInfoResVO"
+                    }
+                }
+            },
+            "RApiPhoneFileScanPageResVO": {
+                "required": [
+                    "code",
+                    "msg",
+                    "status",
+                    "traceId"
+                ],
+                "type": "object",
+                "properties": {
+                    "traceId": {
+                        "type": "string"
+                    },
+                    "code": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "msg": {
+                        "type": "string"
+                    },
+                    "data": {
+                        "$ref": "#/components/schemas/ApiPhoneFileScanPageResVO"
+                    },
+                    "status": {
+                        "type": "string"
+                    }
+                }
+            },
+            "TableDataInfoApiPhoneFileInfoResVO": {
+                "type": "object",
+                "properties": {
+                    "traceId": {
+                        "type": "string",
+                        "description": "Link ID"
+                    },
+                    "total": {
+                        "type": "integer",
+                        "description": "Total number of records",
+                        "format": "int64"
+                    },
+                    "rows": {
+                        "type": "array",
+                        "description": "list data",
+                        "items": {
+                            "$ref": "#/components/schemas/ApiPhoneFileInfoResVO"
+                        }
+                    },
+                    "code": {
+                        "type": "integer",
+                        "description": "Message status code",
+                        "format": "int32"
+                    },
+                    "msg": {
+                        "type": "string",
+                        "description": "message content"
+                    }
+                },
+                "description": "Unified return class for list query results"
+            },
+            "ApiPhoneFileDownloadReqVO": {
+                "required": [
+                    "filePath",
+                    "phoneId",
+                    "size"
+                ],
+                "type": "object",
+                "properties": {
+                    "phoneId": {
+                        "type": "integer",
+                        "description": "Phone ID",
+                        "format": "int64"
+                    },
+                    "filePath": {
+                        "type": "string",
+                        "description": "File directory path"
+                    },
+                    "size": {
+                        "type": "string",
+                        "description": "File size in bytes"
+                    }
+                }
+            },
+            "ApiPhoneFileDownloadResVO": {
+                "type": "object",
+                "properties": {
+                    "downId": {
+                        "type": "string",
+                        "description": "File download ID"
+                    },
+                    "taskId": {
+                        "type": "integer",
+                        "description": "Task ID",
+                        "format": "int64"
+                    }
+                }
+            },
+            "RApiPhoneFileDownloadResVO": {
+                "required": [
+                    "code",
+                    "msg",
+                    "status",
+                    "traceId"
+                ],
+                "type": "object",
+                "properties": {
+                    "traceId": {
+                        "type": "string"
+                    },
+                    "code": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "msg": {
+                        "type": "string"
+                    },
+                    "data": {
+                        "$ref": "#/components/schemas/ApiPhoneFileDownloadResVO"
+                    },
+                    "status": {
+                        "type": "string"
+                    }
+                }
+            },
+            "PhoneCreateReqVO": {
+                "required": [
+                    "num",
+                    "skuId",
+                    "spuId"
+                ],
+                "type": "object",
+                "properties": {
+                    "spuId": {
+                        "type": "integer",
+                        "description": "phone spuId",
+                        "format": "int64"
+                    },
+                    "skuId": {
+                        "type": "integer",
+                        "description": "phone skuId",
+                        "format": "int64"
+                    },
+                    "num": {
+                        "minimum": 1,
+                        "minLength": 1,
+                        "type": "integer",
+                        "description": "Purchase quantity of mobile phones",
+                        "format": "int32"
+                    },
+                    "realResolution": {
+                        "type": "boolean",
+                        "description": "whether to use the actual device resolution"
+                    },
+                    "brand": {
+                        "type": "string",
+                        "description": "brand name"
+                    },
+                    "width": {
+                        "type": "integer",
+                        "description": "resolution width",
+                        "format": "int32"
+                    },
+                    "height": {
+                        "type": "integer",
+                        "description": "resolution height",
+                        "format": "int32"
+                    },
+                    "phoneNumber": {
+                        "type": "string",
+                        "description": "phone number"
+                    }
+                }
+            },
+            "ApiUploadMinIOReqVO": {
+                "required": [
+                    "phoneId"
+                ],
+                "type": "object",
+                "properties": {
+                    "pushDestDir": {
+                        "type": "string",
+                        "description": "Target directory for pushing files (default: /sdcard/Download for non-images, /sdcard/DCIM for images)"
+                    },
+                    "phoneId": {
+                        "type": "integer",
+                        "description": "Phone ID",
+                        "format": "int64"
+                    },
+                    "uploadId": {
+                        "type": "string",
+                        "description": "File unique identifier (MD5)"
+                    },
+                    "fileName": {
+                        "type": "string",
+                        "description": "File name"
+                    },
+                    "fileSize": {
+                        "type": "integer",
+                        "description": "Total file size",
+                        "format": "int64"
+                    },
+                    "liveImageUrl": {
+                        "type": "string",
+                        "description": "Live stream file image URL"
+                    },
+                    "uploadType": {
+                        "type": "integer",
+                        "description": "File upload type: 1-Regular file, 2-Live stream file",
+                        "format": "int32",
+                        "enum": [
+                            1,
+                            2
+                        ]
+                    },
+                    "mergeList": {
+                        "type": "array",
+                        "description": "List of file chunks to merge",
+                        "items": {
+                            "$ref": "#/components/schemas/UploadMergeReqVo"
+                        }
+                    }
+                }
+            },
+            "UploadMergeReqVo": {
+                "required": [
+                    "etag",
+                    "partNumber"
+                ],
+                "type": "object",
+                "properties": {
+                    "etag": {
+                        "type": "string",
+                        "description": "ETag identifier for the uploaded part"
+                    },
+                    "partNumber": {
+                        "type": "integer",
+                        "description": "Part number of the upload (sequence number)",
+                        "format": "int32",
+                        "default": 1
+                    }
+                },
+                "description": "List of file chunks to merge"
+            },
+            "ApiUploadFileResVO": {
+                "required": [
+                    "envFileId",
+                    "phoneId",
+                    "taskId"
+                ],
+                "type": "object",
+                "properties": {
+                    "phoneId": {
+                        "type": "integer",
+                        "description": "Phone ID",
+                        "format": "int64"
+                    },
+                    "envFileId": {
+                        "type": "integer",
+                        "description": "File push record ID",
+                        "format": "int64"
+                    },
+                    "taskId": {
+                        "type": "integer",
+                        "description": "Task ID",
+                        "format": "int64"
+                    }
+                }
+            },
+            "RApiUploadFileResVO": {
+                "required": [
+                    "code",
+                    "msg",
+                    "status",
+                    "traceId"
+                ],
+                "type": "object",
+                "properties": {
+                    "traceId": {
+                        "type": "string"
+                    },
+                    "code": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "msg": {
+                        "type": "string"
+                    },
+                    "data": {
+                        "$ref": "#/components/schemas/ApiUploadFileResVO"
+                    },
+                    "status": {
+                        "type": "string"
+                    }
+                }
+            },
+            "PhoneBrandListReqVO": {
+                "required": [
+                    "sdkVersion"
+                ],
+                "type": "object",
+                "properties": {
+                    "sdkVersion": {
+                        "type": "integer",
+                        "description": "Android version (currently supports: 11, 12, 13, 14, 15)",
+                        "format": "int32"
+                    }
+                }
+            },
+            "PhoneBrandListResVO": {
+                "type": "object",
+                "properties": {
+                    "brand": {
+                        "type": "string",
+                        "description": "SDK version"
+                    },
+                    "resolutions": {
+                        "type": "array",
+                        "description": "Available resolutions list",
+                        "items": {
+                            "$ref": "#/components/schemas/Resolution"
+                        }
+                    }
+                }
+            },
+            "RListPhoneBrandListResVO": {
+                "required": [
+                    "code",
+                    "msg",
+                    "status",
+                    "traceId"
+                ],
+                "type": "object",
+                "properties": {
+                    "traceId": {
+                        "type": "string"
+                    },
+                    "code": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "msg": {
+                        "type": "string"
+                    },
+                    "data": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/PhoneBrandListResVO"
+                        }
+                    },
+                    "status": {
+                        "type": "string"
+                    }
+                }
+            },
+            "Resolution": {
+                "type": "object",
+                "properties": {
+                    "width": {
+                        "type": "integer",
+                        "description": "Resolution width in pixels",
+                        "format": "int32"
+                    },
+                    "height": {
+                        "type": "integer",
+                        "description": "Resolution height in pixels",
+                        "format": "int32"
+                    }
+                },
+                "description": "Available resolutions list"
+            },
+            "PhoneAppOperateReqVO": {
+                "required": [
+                    "appOp",
+                    "id",
+                    "pkg"
+                ],
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "description": "Phone ID",
+                        "format": "int64"
+                    },
+                    "pkg": {
+                        "type": "string",
+                        "description": "Application package name"
+                    },
+                    "appOp": {
+                        "type": "string",
+                        "description": "Operation to perform: uninstall=Uninstall, start=Start, restart=Restart, stop=Stop, clear=Clear"
+                    }
+                }
+            },
+            "PhoneAppListReqVO": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "description": "Phone ID",
+                        "format": "int64"
+                    },
+                    "apkName": {
+                        "type": "string",
+                        "description": "Application name"
+                    },
+                    "onlyShowInstalled": {
+                        "type": "boolean",
+                        "description": "Only show installed applications",
+                        "default": false
+                    },
+                    "cateCode": {
+                        "type": "integer",
+                        "description": "Application category code",
+                        "format": "int64",
+                        "default": -1
+                    },
+                    "shelfStatus": {
+                        "type": "integer",
+                        "description": "Shelf status: 1=On shelf, 0=Off shelf",
+                        "format": "int32"
+                    }
+                }
+            },
+            "PageQuery": {
+                "type": "object",
+                "properties": {
+                    "pageSize": {
+                        "type": "integer",
+                        "description": "Number of records displayed per page",
+                        "format": "int32"
+                    },
+                    "pageNum": {
+                        "type": "integer",
+                        "description": "Current page count",
+                        "format": "int32"
+                    }
+                }
+            },
+            "AppListV2ResVO": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "description": "apkId",
+                        "format": "int64"
+                    },
+                    "apkName": {
+                        "type": "string",
+                        "description": "APK name"
+                    },
+                    "apkPkg": {
+                        "type": "string",
+                        "description": "APK package name"
+                    },
+                    "apkIconUrl": {
+                        "type": "string",
+                        "description": "APK icon URL"
+                    },
+                    "installStatus": {
+                        "type": "integer",
+                        "description": "Installation status: -1=Not installed, 0=Installing, 1=Success, 2=Failed",
+                        "format": "int32",
+                        "default": -1
+                    },
+                    "cateCode": {
+                        "type": "integer",
+                        "description": "Category code (-1 means uncategorized)",
+                        "format": "int32",
+                        "default": -1
+                    },
+                    "weight": {
+                        "type": "integer",
+                        "description": "Weight (higher values appear first)",
+                        "format": "int32",
+                        "default": 0
+                    },
+                    "needUpdate": {
+                        "type": "boolean",
+                        "description": "Whether update is needed",
+                        "default": false
+                    },
+                    "appVersionList": {
+                        "type": "array",
+                        "description": "List of app versions",
+                        "items": {
+                            "$ref": "#/components/schemas/AppVersionListV2ResVO"
+                        }
+                    },
+                    "shelfStatus": {
+                        "type": "integer",
+                        "description": "Shelf status: 1=On shelf, 0=Off shelf",
+                        "format": "int32"
+                    }
+                },
+                "description": "list data"
+            },
+            "AppVersionListV2ResVO": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "apkVersionName": {
+                        "type": "string"
+                    },
+                    "apkVersionCode": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "installStatus": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "size": {
+                        "type": "string"
+                    },
+                    "shelfStatus": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "md5": {
+                        "type": "string"
+                    }
+                },
+                "description": "List of app versions"
+            },
+            "TableDataInfoAppListV2ResVO": {
+                "type": "object",
+                "properties": {
+                    "traceId": {
+                        "type": "string",
+                        "description": "Link ID"
+                    },
+                    "total": {
+                        "type": "integer",
+                        "description": "Total number of records",
+                        "format": "int64"
+                    },
+                    "rows": {
+                        "type": "array",
+                        "description": "list data",
+                        "items": {
+                            "$ref": "#/components/schemas/AppListV2ResVO"
+                        }
+                    },
+                    "code": {
+                        "type": "integer",
+                        "description": "Message status code",
+                        "format": "int32"
+                    },
+                    "msg": {
+                        "type": "string",
+                        "description": "message content"
+                    }
+                },
+                "description": "Unified return class for list query results"
+            },
+            "PhoneAppInstallReqVO": {
+                "required": [
+                    "apkName",
+                    "apkPkg",
+                    "apkVersionCode",
+                    "apkVersionName",
+                    "fileId",
+                    "genLog",
+                    "id"
+                ],
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "description": "Phone ID",
+                        "format": "int64"
+                    },
+                    "withG": {
+                        "type": "boolean",
+                        "description": "Whether to grant all permissions to the application",
+                        "example": false,
+                        "default": false
+                    },
+                    "fileId": {
+                        "type": "integer",
+                        "description": "Application version ID (file ID)",
+                        "format": "int64"
+                    },
+                    "apkPkg": {
+                        "type": "string",
+                        "description": "Application package name"
+                    },
+                    "upgrade": {
+                        "type": "boolean",
+                        "description": "Whether to upgrade the application",
+                        "default": false
+                    },
+                    "apkVersionName": {
+                        "type": "string",
+                        "description": "APK version name"
+                    },
+                    "apkVersionCode": {
+                        "type": "integer",
+                        "description": "APK version code",
+                        "format": "int32"
+                    },
+                    "apkName": {
+                        "type": "string",
+                        "description": "Application name"
+                    },
+                    "genLog": {
+                        "type": "boolean",
+                        "description": "Whether to regenerate logs",
+                        "default": true
+                    }
+                }
+            },
+            "ProductInfoVO": {
+                "type": "object",
+                "properties": {
+                    "spuId": {
+                        "type": "integer",
+                        "description": "Product SPU ID",
+                        "format": "int64"
+                    },
+                    "spuName": {
+                        "type": "string",
+                        "description": "Product SKU Name"
+                    },
+                    "skuList": {
+                        "type": "array",
+                        "description": "Product SKU information list",
+                        "items": {
+                            "$ref": "#/components/schemas/ProductSkuInfoVO"
+                        }
+                    }
+                }
+            },
+            "ProductSkuExtraPriceInfoVO": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "description": "Actual product ID",
+                        "format": "int64"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Fee name"
+                    },
+                    "price": {
+                        "type": "number",
+                        "description": "Fee amount"
+                    },
+                    "cycleName": {
+                        "type": "string",
+                        "description": "Billing cycle unit"
+                    }
+                },
+                "description": "Additional price information of product SKU"
+            },
+            "ProductSkuInfoVO": {
+                "type": "object",
+                "properties": {
+                    "skuId": {
+                        "type": "integer",
+                        "description": "Product SKU ID",
+                        "format": "int64"
+                    },
+                    "skuName": {
+                        "type": "string",
+                        "description": "Product SKU name"
+                    },
+                    "chargeType": {
+                        "type": "integer",
+                        "description": "Billing type: 1-On demand 2-Time package",
+                        "format": "int32"
+                    },
+                    "cycle": {
+                        "type": "integer",
+                        "description": "Billing cycle",
+                        "format": "int32"
+                    },
+                    "cycleName": {
+                        "type": "string",
+                        "description": "Billing cycle unit"
+                    },
+                    "isAutoRenewal": {
+                        "type": "boolean",
+                        "description": "Whether to auto-renew, currently fixed as: true"
+                    },
+                    "cyclePrice": {
+                        "type": "number",
+                        "description": "Computing power cost"
+                    },
+                    "skuExtraPriceList": {
+                        "type": "array",
+                        "description": "Additional price information of product SKU",
+                        "items": {
+                            "$ref": "#/components/schemas/ProductSkuExtraPriceInfoVO"
+                        }
+                    }
+                },
+                "description": "Product SKU information list"
+            },
+            "RListProductInfoVO": {
+                "required": [
+                    "code",
+                    "msg",
+                    "status",
+                    "traceId"
+                ],
+                "type": "object",
+                "properties": {
+                    "traceId": {
+                        "type": "string"
+                    },
+                    "code": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "msg": {
+                        "type": "string"
+                    },
+                    "data": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/ProductInfoVO"
+                        }
+                    },
+                    "status": {
+                        "type": "string"
+                    }
+                }
+            },
+            "SelectPhoneTaskStatusReqVO": {
+                "required": [
+                    "phoneId"
+                ],
+                "type": "object",
+                "properties": {
+                    "operateType": {
+                        "type": "string",
+                        "description": "Phone operation type: powerOn, reset, restart, renew",
+                        "enum": [
+                            "powerOn",
+                            "reset",
+                            "restart",
+                            "renew"
+                        ]
+                    },
+                    "phoneId": {
+                        "type": "integer",
+                        "description": "Phone ID",
+                        "format": "int64"
+                    }
+                }
+            },
+            "PhoneTaskStatusResVO": {
+                "type": "object",
+                "properties": {
+                    "taskStatus": {
+                        "type": "integer",
+                        "description": "Phone operation task status code",
+                        "format": "int32"
+                    },
+                    "taskStatusName": {
+                        "type": "string",
+                        "description": "Phone operation task status name"
+                    },
+                    "phoneStatus": {
+                        "type": "integer",
+                        "description": "Current phone status code",
+                        "format": "int32"
+                    },
+                    "phoneStatusName": {
+                        "type": "string",
+                        "description": "Current phone status name"
+                    }
+                }
+            },
+            "RPhoneTaskStatusResVO": {
+                "required": [
+                    "code",
+                    "msg",
+                    "status",
+                    "traceId"
+                ],
+                "type": "object",
+                "properties": {
+                    "traceId": {
+                        "type": "string"
+                    },
+                    "code": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "msg": {
+                        "type": "string"
+                    },
+                    "data": {
+                        "$ref": "#/components/schemas/PhoneTaskStatusResVO"
+                    },
+                    "status": {
+                        "type": "string"
+                    }
+                }
+            },
+            "PhoneResolutionListVOReqVO": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": "integer",
+                        "description": "Phone status",
+                        "format": "int32"
+                    }
+                }
+            },
+            "PhoneResolutionListResVO": {
+                "type": "object",
+                "properties": {
+                    "screenWidth": {
+                        "type": "string",
+                        "description": "Screen width"
+                    },
+                    "screenHeight": {
+                        "type": "string",
+                        "description": "Screen height"
+                    }
+                }
+            },
+            "PhonePageListReqVO": {
+                "type": "object",
+                "properties": {
+                    "nameOrCode": {
+                        "maxLength": 32,
+                        "minLength": 0,
+                        "type": "string",
+                        "description": "phone name or phone number"
+                    },
+                    "spuId": {
+                        "type": "integer",
+                        "description": "phone spuId",
+                        "format": "int64"
+                    },
+                    "skuId": {
+                        "type": "integer",
+                        "description": "phone skuId",
+                        "format": "int64"
+                    },
+                    "status": {
+                        "type": "integer",
+                        "description": "phone status",
+                        "format": "int32"
+                    },
+                    "authorizeUserIds": {
+                        "type": "array",
+                        "description": "Authorized User ID list",
+                        "items": {
+                            "type": "integer",
+                            "description": "Authorized User ID list",
+                            "format": "int64"
+                        }
+                    },
+                    "expireStatus": {
+                        "type": "integer",
+                        "description": "Billing (expired) status: 0=expired, 1=normal",
+                        "format": "int32"
+                    },
+                    "skuName": {
+                        "type": "string",
+                        "description": "sku name"
+                    },
+                    "networkId": {
+                        "type": "integer",
+                        "description": "Network ID",
+                        "format": "int64"
+                    },
+                    "groupId": {
+                        "type": "integer",
+                        "description": "phone grouping ID list",
+                        "format": "int64"
+                    },
+                    "groupCode": {
+                        "type": "string",
+                        "description": "phone system group number"
+                    },
+                    "groupType": {
+                        "type": "string",
+                        "description": "mobile grouping type"
+                    }
+                }
+            },
+            "PhoneAuthorizeResVO": {
+                "type": "object",
+                "properties": {
+                    "avatar": {
+                        "type": "string",
+                        "description": "Avatar URL"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Name"
+                    },
+                    "userId": {
+                        "type": "integer",
+                        "description": "User ID",
+                        "format": "int64"
+                    }
+                },
+                "description": "Authorized user information"
+            },
+            "PhonePageListResVO": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "description": "Phone ID",
+                        "format": "int64"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Phone name"
+                    },
+                    "groupId": {
+                        "type": "integer",
+                        "description": "Phone group ID",
+                        "format": "int64"
+                    },
+                    "groupName": {
+                        "type": "string",
+                        "description": "Phone group name"
+                    },
+                    "code": {
+                        "type": "string",
+                        "description": "Phone code (custom defined by business)"
+                    },
+                    "spuId": {
+                        "type": "integer",
+                        "description": "SPU ID",
+                        "format": "int64"
+                    },
+                    "spuName": {
+                        "type": "string",
+                        "description": "SPU name"
+                    },
+                    "skuId": {
+                        "type": "integer",
+                        "description": "SKU ID",
+                        "format": "int64"
+                    },
+                    "phoneModel": {
+                        "type": "string",
+                        "description": "Phone model"
+                    },
+                    "phoneBrand": {
+                        "type": "string",
+                        "description": "Phone brand"
+                    },
+                    "adbIp": {
+                        "type": "string",
+                        "description": "ADB IP information"
+                    },
+                    "adbPort": {
+                        "type": "string",
+                        "description": "ADB port"
+                    },
+                    "adbPassword": {
+                        "type": "string",
+                        "description": "ADB password"
+                    },
+                    "payType": {
+                        "type": "integer",
+                        "description": "Payment type: 1=Yearly/Monthly, 2=Per N minutes",
+                        "format": "int32"
+                    },
+                    "skuName": {
+                        "type": "string",
+                        "description": "SKU name"
+                    },
+                    "cycleName": {
+                        "type": "string",
+                        "description": "Billing cycle name"
+                    },
+                    "cycleEnum": {
+                        "type": "string",
+                        "description": "Billing cycle enum value"
+                    },
+                    "expireStatus": {
+                        "type": "integer",
+                        "description": "Billing (expiration) status: 0=Expired, 1=Normal",
+                        "format": "int32"
+                    },
+                    "networkId": {
+                        "type": "integer",
+                        "description": "Bound network ID",
+                        "format": "int64"
+                    },
+                    "channel": {
+                        "type": "string",
+                        "description": "Channel"
+                    },
+                    "powerOnTime": {
+                        "type": "string",
+                        "description": "Last power-on time",
+                        "format": "date-time"
+                    },
+                    "powerOffTime": {
+                        "type": "string",
+                        "description": "Last power-off time",
+                        "format": "date-time"
+                    },
+                    "expireTime": {
+                        "type": "string",
+                        "description": "Expiration time",
+                        "format": "date-time"
+                    },
+                    "expireDuration": {
+                        "type": "string",
+                        "description": "Expiration duration"
+                    },
+                    "nextPayTime": {
+                        "type": "string",
+                        "description": "Next payment time",
+                        "format": "date-time"
+                    },
+                    "status": {
+                        "type": "integer",
+                        "description": "Status (refer to PhoneStatusEnum)",
+                        "format": "int32"
+                    },
+                    "remark": {
+                        "type": "string",
+                        "description": "Remarks"
+                    },
+                    "userId": {
+                        "type": "integer",
+                        "description": "Authorized user ID",
+                        "format": "int64"
+                    },
+                    "createUser": {
+                        "type": "string",
+                        "description": "Creator"
+                    },
+                    "createTime": {
+                        "type": "string",
+                        "description": "Creation time",
+                        "format": "date-time"
+                    },
+                    "updateTime": {
+                        "type": "string",
+                        "description": "Last update time",
+                        "format": "date-time"
+                    },
+                    "networkResVO": {
+                        "$ref": "#/components/schemas/PhoneSimpleNetWorkResVO"
+                    },
+                    "authorizeResVO": {
+                        "$ref": "#/components/schemas/PhoneAuthorizeResVO"
+                    },
+                    "cycle": {
+                        "type": "integer",
+                        "description": "Billing cycle",
+                        "format": "int32"
+                    }
+                },
+                "description": "list data"
+            },
+            "PhoneSimpleNetWorkResVO": {
+                "type": "object",
+                "properties": {
+                    "host": {
+                        "type": "string",
+                        "description": "Proxy host"
+                    },
+                    "port": {
+                        "type": "integer",
+                        "description": "Proxy port",
+                        "format": "int32"
+                    },
+                    "account": {
+                        "type": "string",
+                        "description": "Account"
+                    },
+                    "password": {
+                        "type": "string",
+                        "description": "Password"
+                    },
+                    "region": {
+                        "type": "string",
+                        "description": "Region"
+                    },
+                    "num": {
+                        "type": "integer",
+                        "description": "Sequence number",
+                        "format": "int32"
+                    },
+                    "countryCode": {
+                        "type": "string",
+                        "description": "Country code"
+                    },
+                    "countryName": {
+                        "type": "string",
+                        "description": "Country name"
+                    },
+                    "type": {
+                        "type": "string",
+                        "description": "Proxy type: 1.socks5 2.https 3.http"
+                    },
+                    "timezone": {
+                        "type": "string",
+                        "description": "Timezone"
+                    },
+                    "language": {
+                        "type": "string",
+                        "description": "Language"
+                    },
+                    "ip": {
+                        "type": "string",
+                        "description": "Actual IP address"
+                    },
+                    "latitude": {
+                        "type": "string",
+                        "description": "Latitude"
+                    },
+                    "longitude": {
+                        "type": "string",
+                        "description": "Longitude"
+                    },
+                    "bindCount": {
+                        "type": "integer",
+                        "description": "Number of bound phones",
+                        "format": "int64"
+                    },
+                    "status": {
+                        "type": "integer",
+                        "description": "Status: 0=Not detected 1=Detection passed 2=Detection failed",
+                        "format": "int32"
+                    },
+                    "detectDataType": {
+                        "type": "integer",
+                        "description": "Detection data type: 1-Follow IP 2-Custom",
+                        "format": "int32"
+                    },
+                    "groupId": {
+                        "type": "integer",
+                        "description": "Network group ID",
+                        "format": "int64"
+                    },
+                    "remark": {
+                        "type": "string",
+                        "description": "Remarks"
+                    }
+                },
+                "description": "Phone network information"
+            },
+            "TableDataInfoPhonePageListResVO": {
+                "type": "object",
+                "properties": {
+                    "traceId": {
+                        "type": "string",
+                        "description": "Link ID"
+                    },
+                    "total": {
+                        "type": "integer",
+                        "description": "Total number of records",
+                        "format": "int64"
+                    },
+                    "rows": {
+                        "type": "array",
+                        "description": "list data",
+                        "items": {
+                            "$ref": "#/components/schemas/PhonePageListResVO"
+                        }
+                    },
+                    "code": {
+                        "type": "integer",
+                        "description": "Message status code",
+                        "format": "int32"
+                    },
+                    "msg": {
+                        "type": "string",
+                        "description": "message content"
+                    }
+                },
+                "description": "Unified return class for list query results"
+            },
+            "AppCategoryVO": {
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "type": "integer",
+                        "description": "category code",
+                        "format": "int32"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "category name"
+                    }
+                }
+            },
+            "RListAppCategoryVO": {
+                "required": [
+                    "code",
+                    "msg",
+                    "status",
+                    "traceId"
+                ],
+                "type": "object",
+                "properties": {
+                    "traceId": {
+                        "type": "string"
+                    },
+                    "code": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "msg": {
+                        "type": "string"
+                    },
+                    "data": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/AppCategoryVO"
+                        }
+                    },
+                    "status": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}
