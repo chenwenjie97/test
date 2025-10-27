@@ -6,7 +6,7 @@
     },
     "servers": [
         {
-            "url": "http://localhost:8765",
+            "url": "https://ai.pmock.com/api",
             "description": "Generated server url"
         }
     ],
