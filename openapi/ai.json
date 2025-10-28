@@ -6,7 +6,7 @@
     },
     "servers": [
         {
-            "url": "http://localhost:8765",
+            "url": "https://ai.pmock.com/api",
             "description": "Generated server url"
         }
     ],
@@ -52,7 +52,7 @@
         },
         "/ai/sn/wav/generate": {
             "post": {
-                "summary": "SN generate wav",
+                "summary": "SN-Generate wav",
                 "description": "create a task to generate wav",
                 "operationId": "sunoGenWav",
                 "requestBody": {
@@ -81,7 +81,7 @@
         },
         "/ai/sn/upsample/tags": {
             "post": {
-                "summary": "SN upsample tags",
+                "summary": "SN-Upsample tags",
                 "description": "create a task to upsample tags",
                 "operationId": "sunoUpsampleTags",
                 "requestBody": {
@@ -110,7 +110,7 @@
         },
         "/ai/sn/mp4/generate": {
             "post": {
-                "summary": "SN generate mp4",
+                "summary": "SN-Generate mp4",
                 "description": "create a task to generate a video",
                 "operationId": "sunoGenMp4",
                 "requestBody": {
@@ -139,7 +139,7 @@
         },
         "/ai/sn/lyrics/generate": {
             "post": {
-                "summary": "SN generate lyrics",
+                "summary": "SN-Generate lyrics",
                 "description": "create a task to generate lyrics",
                 "operationId": "sunoGenLyrics",
                 "requestBody": {
@@ -168,7 +168,7 @@
         },
         "/ai/sn/get/timeline": {
             "post": {
-                "summary": "SN get lyrics and audio timeline",
+                "summary": "SN-Get lyrics and audio timeline",
                 "description": "create a task to get lyrics and audio timeline",
                 "operationId": "sunoGetLATimeline",
                 "requestBody": {
@@ -197,7 +197,7 @@
         },
         "/ai/sn/get/downbeats": {
             "post": {
-                "summary": "SN get downbeats",
+                "summary": "SN-Get downbeats",
                 "description": "create a task to get downbeats",
                 "operationId": "sunoGetDownbeats",
                 "requestBody": {
@@ -226,7 +226,7 @@
         },
         "/ai/sn/create/persona": {
             "post": {
-                "summary": "SN create persona",
+                "summary": "SN-Create persona",
                 "description": "create a task to create persona",
                 "operationId": "sunoCreatePersona",
                 "requestBody": {
@@ -255,7 +255,7 @@
         },
         "/ai/sn/audio/upload": {
             "post": {
-                "summary": "SN upload audio",
+                "summary": "SN-Upload audio",
                 "operationId": "sunoUploadAudio",
                 "requestBody": {
                     "content": {
@@ -312,7 +312,7 @@
         },
         "/ai/sn/audio/concat": {
             "post": {
-                "summary": "SN connect audio",
+                "summary": "SN-Connect audio",
                 "description": "create a task to concat audio",
                 "operationId": "sunoConcatAudio",
                 "requestBody": {
@@ -341,7 +341,7 @@
         },
         "/ai/sa/video/generate": {
             "post": {
-                "summary": "SA generate video",
+                "summary": "SA-Generate video",
                 "description": "create a task to generate video",
                 "operationId": "soraGenVideo",
                 "requestBody": {
@@ -370,7 +370,7 @@
         },
         "/ai/gi/video/generate": {
             "post": {
-                "summary": "GI generate video",
+                "summary": "GI-Generate video",
                 "description": "create a task to generate audio",
                 "operationId": "geminiGenVideo",
                 "requestBody": {
@@ -399,7 +399,7 @@
         },
         "/ai/gi/image/generate": {
             "post": {
-                "summary": "GI generate image",
+                "summary": "GI-Generate image",
                 "description": "create a task to generate image",
                 "operationId": "geminiGenImage",
                 "requestBody": {
@@ -453,6 +453,11 @@
                 "type": "object",
                 "additionalProperties": {
 
+                },
+                "properties": {
+                    "empty": {
+                        "type": "boolean"
+                    }
                 }
             },
             "RespModelListRecordWyResult": {
