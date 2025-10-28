@@ -23,7 +23,7 @@
     "paths": {
         "/task/result": {
             "post": {
-                "summary": "get task result",
+                "summary": "Get task result",
                 "description": "get the task execution result through the task ID list",
                 "operationId": "getResult",
                 "requestBody": {
