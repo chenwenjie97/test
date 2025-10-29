@@ -455,9 +455,7 @@
 
                 },
                 "properties": {
-                    "empty": {
-                        "type": "boolean"
-                    }
+                    
                 }
             },
             "RespModelListRecordWyResult": {
