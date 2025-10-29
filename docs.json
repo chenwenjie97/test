@@ -64,6 +64,7 @@
           {
             "group": "PMOCK",
             "pages": [
+              "api-reference/pmock-api-introduction",
               "api-reference/pmock/get-product-list",
               "api-reference/pmock/create-phone",
               "api-reference/pmock/get-phone-list",
