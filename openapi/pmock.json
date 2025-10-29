@@ -1,17 +1,18 @@
 {
     "openapi": "3.1.0",
     "info": {
-        "title": "OpenAPI definition",
+        "title": "apidoc",
+        "description": "",
         "version": "1.0.0"
     },
+    "tags": [
+
+    ],
     "servers": [
         {
             "url": "https://user.pmock.com/api",
             "description": "Generated server url"
         }
-    ],
-    "tags": [
-
     ],
     "paths": {
         "/open/api/product/list": {
@@ -156,7 +157,7 @@
                     {
                         "name": "spuId",
                         "in": "query",
-                        "description": "phone spuId",
+                        "description": "phone spuId, The `spuId` value contained in the current interface's returned result",
                         "required": false,
                         "schema": {
                             "type": "integer",
@@ -166,7 +167,7 @@
                     {
                         "name": "skuId",
                         "in": "query",
-                        "description": "phone skuId",
+                        "description": "phone skuId, The `skuId` value contained in the current interface's returned result",
                         "required": false,
                         "schema": {
                             "type": "integer",
@@ -176,7 +177,7 @@
                     {
                         "name": "status",
                         "in": "query",
-                        "description": "phone status",
+                        "description": "phone status, The `status` value contained in the current interface's returned result, 1=normal,2=restart,4=powerOff,41=powerOn,6=reset,7=One-click New Device",
                         "required": false,
                         "schema": {
                             "type": "integer"
@@ -185,7 +186,7 @@
                     {
                         "name": "authorizeUserIds",
                         "in": "query",
-                        "description": "Authorized User ID list",
+                        "description": "Authorized User ID list, The `userId` value contained in the current interface's returned result",
                         "required": false,
                         "schema": {
                             "type": "string"
@@ -203,7 +204,7 @@
                     {
                         "name": "skuName",
                         "in": "query",
-                        "description": "sku name",
+                        "description": "sku name, The `skuName` value contained in the current interface's returned result",
                         "required": false,
                         "schema": {
                             "type": "string"
@@ -212,7 +213,7 @@
                     {
                         "name": "networkId",
                         "in": "query",
-                        "description": "Network ID",
+                        "description": "phone network ID, The `networkId` value contained in the current interface's returned result",
                         "required": false,
                         "schema": {
                             "type": "integer",
@@ -222,7 +223,7 @@
                     {
                         "name": "groupId",
                         "in": "query",
-                        "description": "phone grouping ID list",
+                        "description": "phone grouping ID list, The `groupId` value contained in the current interface's returned result",
                         "required": false,
                         "schema": {
                             "type": "integer",
@@ -232,7 +233,7 @@
                     {
                         "name": "groupCode",
                         "in": "query",
-                        "description": "phone system group number",
+                        "description": "phone group code, Value is all_group=All groups,renew_expired=After the renewal period,un_group=Not grouped",
                         "required": false,
                         "schema": {
                             "type": "string"
@@ -241,7 +242,7 @@
                     {
                         "name": "groupType",
                         "in": "query",
-                        "description": "mobile grouping type",
+                        "description": "phone group type, Value is system_group=System grouping,custom_group=Custom grouping",
                         "required": false,
                         "schema": {
                             "type": "string"
@@ -371,7 +372,7 @@
                     {
                         "name": "status",
                         "in": "query",
-                        "description": "Phone status",
+                        "description": "Phone status, 1=normal,2=restart,4=powerOff,41=powerOn,6=reset,7=One-click New Device",
                         "required": false,
                         "schema": {
                             "type": "integer"
@@ -436,7 +437,7 @@
                     {
                         "name": "phoneId",
                         "in": "query",
-                        "description": "Phone ID",
+                        "description": "Phone ID, The `Get phone list` returns the ID contained in the data.",
                         "required": true,
                         "schema": {
                             "type": "integer",
@@ -1771,10 +1772,262 @@
 
                 ]
             }
+        },
+        "/open/api/network/list": {
+            "get": {
+                "summary": "Get network list",
+                "deprecated": false,
+                "description": "",
+                "tags": [
+
+                ],
+                "parameters": [
+                    {
+                        "name": "host",
+                        "in": "query",
+                        "description": "proxy network ip/domain The `host` value contained in the current interface's returned result",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "num",
+                        "in": "query",
+                        "description": "The `num` value contained in the current interface's returned result",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "remark",
+                        "in": "query",
+                        "description": "remark",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "groupId",
+                        "in": "query",
+                        "description": "The `groupId` value contained in the current interface's returned result",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    },
+                    {
+                        "name": "groupCode",
+                        "in": "query",
+                        "description": "Network system packet code, all_group=All groups,renew_expired=After the renewal period,un_group=Not grouped",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "groupType",
+                        "in": "query",
+                        "description": "Network Packet Type, system_group=System grouping,custom_group=Custom grouping",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "pageSize",
+                        "in": "query",
+                        "description": "Number of records displayed per page\nThe default is1,and the maximum number of items in a single query is:1",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "pageNum",
+                        "in": "query",
+                        "description": "Current page count",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TableDataInfoNetworkListResVO"
+                                },
+                                "examples": {
+                                    "1": {
+                                        "summary": "成功示例",
+                                        "value": {
+                                            "traceId": "",
+                                            "total": 0,
+                                            "rows": [
+                                                {
+                                                    "id": 0,
+                                                    "name": "",
+                                                    "num": 0,
+                                                    "groupId": 0,
+                                                    "groupName": "",
+                                                    "host": "",
+                                                    "port": 0,
+                                                    "account": "",
+                                                    "password": "",
+                                                    "type": "",
+                                                    "status": 0,
+                                                    "detectDataType": 0,
+                                                    "bindCount": 0,
+                                                    "boxBindCount": 0,
+                                                    "countryCode": "",
+                                                    "timezone": "",
+                                                    "language": "",
+                                                    "countryName": "",
+                                                    "region": "",
+                                                    "latitude": "",
+                                                    "longitude": "",
+                                                    "ip": "",
+                                                    "remark": "",
+                                                    "createTime": "",
+                                                    "updateTime": ""
+                                                }
+                                            ],
+                                            "code": 0,
+                                            "msg": ""
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "headers": {
+
+                        }
+                    }
+                },
+                "security": [
+
+                ]
+            }
         }
     },
     "components": {
         "schemas": {
+            "NetworkListResVO": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "description": "Network ID",
+                        "format": "int64"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "proxy network name"
+                    },
+                    "num": {
+                        "type": "integer",
+                        "description": "serial number, Used for displaying sorting"
+                    },
+                    "groupId": {
+                        "type": "integer",
+                        "description": "proxy network group id",
+                        "format": "int64"
+                    },
+                    "groupName": {
+                        "type": "string",
+                        "description": "proxy network group name"
+                    },
+                    "host": {
+                        "type": "string",
+                        "description": "proxy network ip/domain"
+                    },
+                    "port": {
+                        "type": "integer",
+                        "description": "proxy network port"
+                    },
+                    "account": {
+                        "type": "string",
+                        "description": "account"
+                    },
+                    "password": {
+                        "type": "string",
+                        "description": "password"
+                    },
+                    "type": {
+                        "type": "string",
+                        "description": "proxy network type 1=socks5,2=https,3=http"
+                    },
+                    "status": {
+                        "type": "integer",
+                        "description": "proxy network status, 0=undetected,1=Test passed,2=Test failed"
+                    },
+                    "detectDataType": {
+                        "type": "integer",
+                        "description": "Data type of the test results，1=Follow the IP 2=custom"
+                    },
+                    "bindCount": {
+                        "type": "integer",
+                        "description": "Number of associated mobile phones",
+                        "format": "int64"
+                    },
+                    "boxBindCount": {
+                        "type": "integer",
+                        "description": "The number of times the Magic Box mobile phone has been bound",
+                        "format": "int64"
+                    },
+                    "countryCode": {
+                        "type": "string",
+                        "description": "proxy network country code"
+                    },
+                    "timezone": {
+                        "type": "string",
+                        "description": "proxy network timezone"
+                    },
+                    "language": {
+                        "type": "string",
+                        "description": "proxy network language"
+                    },
+                    "countryName": {
+                        "type": "string",
+                        "description": "proxy network country name"
+                    },
+                    "region": {
+                        "type": "string",
+                        "description": "proxy network region"
+                    },
+                    "latitude": {
+                        "type": "string",
+                        "description": "proxy network latitude"
+                    },
+                    "longitude": {
+                        "type": "string",
+                        "description": "proxy network longitude"
+                    },
+                    "ip": {
+                        "type": "string",
+                        "description": "proxy network Actual IP address"
+                    },
+                    "remark": {
+                        "type": "string",
+                        "description": "remark"
+                    },
+                    "createTime": {
+                        "type": "string",
+                        "description": "create time"
+                    },
+                    "updateTime": {
+                        "type": "string",
+                        "description": "update time"
+                    }
+                }
+            },
             "Resolution": {
                 "type": "object",
                 "properties": {
@@ -1818,7 +2071,7 @@
                     },
                     "msg": {
                         "type": "string",
-                        "description": "message"
+                        "description": "Request return message"
                     },
                     "data": {
                         "type": "array",
@@ -1826,7 +2079,7 @@
                             "$ref": "#/components/schemas/ProductInfoVO",
                             "description": "ProductInfoVO"
                         },
-                        "description": "return data"
+                        "description": "Request return data"
                     },
                     "status": {
                         "type": "string",
@@ -1868,7 +2121,7 @@
                 "properties": {
                     "skuId": {
                         "type": "integer",
-                        "description": "Product SKU ID",
+                        "description": "Product SKU ID, Used for creating mobile phones",
                         "format": "int64"
                     },
                     "skuName": {
@@ -1877,7 +2130,7 @@
                     },
                     "chargeType": {
                         "type": "integer",
-                        "description": "Billing type: 1-On demand 2-Time package"
+                        "description": "Billing type: 1=On demand, 2=Time package, The charging method when the mobile phone is in operation."
                     },
                     "cycle": {
                         "type": "integer",
@@ -2113,17 +2366,17 @@
                 "properties": {
                     "spuId": {
                         "type": "integer",
-                        "description": "phone spuId",
+                        "description": "phone spuId, obtain through `Get product list` api",
                         "format": "int64"
                     },
                     "skuId": {
                         "type": "integer",
-                        "description": "phone skuId",
+                        "description": "phone skuId, obtain through `Get product list` api",
                         "format": "int64"
                     },
                     "num": {
                         "type": "integer",
-                        "description": "Purchase quantity of mobile phones",
+                        "description": "Purchase quantity of mobile phones, minimum value is 1",
                         "minimum": 1
                     },
                     "realResolution": {
@@ -2132,19 +2385,19 @@
                     },
                     "brand": {
                         "type": "string",
-                        "description": "brand name"
+                        "description": "brand name, obtain through `Get list brand` API"
                     },
                     "width": {
                         "type": "integer",
-                        "description": "resolution width"
+                        "description": "resolution width, If you fill in the brand name, it must be consistent with the value returned by the `Get list brand` API."
                     },
                     "height": {
                         "type": "integer",
-                        "description": "resolution height"
+                        "description": "resolution height, If you fill in the brand name, it must be consistent with the value returned by the `Get list brand` API."
                     },
                     "phoneNumber": {
                         "type": "string",
-                        "description": "phone number"
+                        "description": "phone number, Set the mobile phone number stored within the device"
                     }
                 },
                 "required": [
@@ -2218,10 +2471,10 @@
                     },
                     "msg": {
                         "type": "string",
-                        "description": "message"
+                        "description": "Request return message"
                     },
                     "data": {
-                        "description": "return data",
+                        "description": "Request return data",
                         "type": "null"
                     },
                     "status": {
@@ -2378,11 +2631,11 @@
                 "properties": {
                     "downId": {
                         "type": "string",
-                        "description": "File download ID"
+                        "description": "File download ID,The download can be used to obtain the task result through `Get task info list`"
                     },
                     "taskId": {
                         "type": "integer",
-                        "description": "Task ID",
+                        "description": "Task ID,The taskId can be used to obtain the task result through `Get task info list`",
                         "format": "int64"
                     }
                 }
@@ -2483,7 +2736,7 @@
                 "properties": {
                     "taskId": {
                         "type": "integer",
-                        "description": "Task ID",
+                        "description": "Task ID, Used to query the execution status of the task",
                         "format": "int64"
                     }
                 }
@@ -2493,15 +2746,15 @@
                 "properties": {
                     "screenWidth": {
                         "type": "string",
-                        "description": "Screen width resolution"
+                        "description": "Phone Screen width resolution"
                     },
                     "screenHeight": {
                         "type": "string",
-                        "description": "Screen height resolution"
+                        "description": "Phone Screen height resolution"
                     },
                     "taskId": {
                         "type": "integer",
-                        "description": "Task ID",
+                        "description": "Task ID, Used to query the execution status of the task",
                         "format": "int64"
                     }
                 }
@@ -2532,11 +2785,11 @@
                 "properties": {
                     "screenWidth": {
                         "type": "string",
-                        "description": "Screen width"
+                        "description": "Phone Screen width"
                     },
                     "screenHeight": {
                         "type": "string",
-                        "description": "Screen height"
+                        "description": "Phone Screen height"
                     }
                 }
             },
@@ -2796,6 +3049,36 @@
                     }
                 }
             },
+            "TableDataInfoNetworkListResVO": {
+                "type": "object",
+                "properties": {
+                    "traceId": {
+                        "type": "string",
+                        "description": "Link ID"
+                    },
+                    "total": {
+                        "type": "integer",
+                        "description": "Total number of records",
+                        "format": "int64"
+                    },
+                    "rows": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/NetworkListResVO",
+                            "description": "NetworkListResVO"
+                        },
+                        "description": "list data"
+                    },
+                    "code": {
+                        "type": "integer",
+                        "description": "Message status code"
+                    },
+                    "msg": {
+                        "type": "string",
+                        "description": "message content"
+                    }
+                }
+            },
             "RListPhoneBrandListResVO": {
                 "type": "object",
                 "properties": {
@@ -2809,7 +3092,7 @@
                     },
                     "msg": {
                         "type": "string",
-                        "description": "message"
+                        "description": "Request return message"
                     },
                     "data": {
                         "type": "array",
@@ -2817,7 +3100,7 @@
                             "$ref": "#/components/schemas/PhoneBrandListResVO",
                             "description": "ApiBrandListResVO"
                         },
-                        "description": "return data"
+                        "description": "Request return data"
                     },
                     "status": {
                         "type": "string",
@@ -2857,7 +3140,7 @@
                     },
                     "msg": {
                         "type": "string",
-                        "description": "message"
+                        "description": "Request return message"
                     },
                     "data": {
                         "type": "array",
@@ -2865,7 +3148,7 @@
                             "$ref": "#/components/schemas/TaskInfoResVO",
                             "description": "TaskInfoResVO"
                         },
-                        "description": "return data"
+                        "description": "Request return data"
                     },
                     "status": {
                         "type": "string",
@@ -2885,7 +3168,7 @@
                 "properties": {
                     "phoneId": {
                         "type": "integer",
-                        "description": "Phone ID",
+                        "description": "Phone ID,obtain through `Get phone list` api",
                         "format": "int64"
                     },
                     "taskIds": {
@@ -2907,16 +3190,16 @@
                 "properties": {
                     "id": {
                         "type": "integer",
-                        "description": "Phone ID",
+                        "description": "Phone ID, The `Get phone list` returns the ID contained in the data.",
                         "format": "int64"
                     },
                     "pkg": {
                         "type": "string",
-                        "description": "Application package name"
+                        "description": "APK package name,Obtain through `Get App list`"
                     },
                     "appOp": {
                         "type": "string",
-                        "description": "Operation to perform: uninstall=Uninstall, start=Start, restart=Restart, stop=Stop, clear=Clear"
+                        "description": "Operation to perform: uninstall=Uninstall App, start=Start App, restart=Restart App, stop=Stop App, clear=Clear App"
                     }
                 },
                 "required": [
@@ -2930,7 +3213,7 @@
                 "properties": {
                     "id": {
                         "type": "integer",
-                        "description": "Phone ID",
+                        "description": "Phone ID, The `Get phone list` returns the ID contained in the data.",
                         "format": "int64"
                     },
                     "withG": {
@@ -2940,29 +3223,29 @@
                     },
                     "fileId": {
                         "type": "integer",
-                        "description": "Application version ID (file ID)",
+                        "description": "App version ID,Obtain (the id of the app version list) through `Get App list`",
                         "format": "int64"
                     },
                     "apkPkg": {
                         "type": "string",
-                        "description": "Application package name"
+                        "description": "Application package name,Obtain through `Get App list`"
                     },
                     "upgrade": {
                         "type": "boolean",
-                        "description": "Whether to upgrade the application",
+                        "description": "Whether to upgrade the application, if it is true, install the latest app(default:false)",
                         "default": false
                     },
                     "apkVersionName": {
                         "type": "string",
-                        "description": "APK version name"
+                        "description": "APK version name,Obtain through `Get App list`"
                     },
                     "apkVersionCode": {
                         "type": "integer",
-                        "description": "APK version code"
+                        "description": "APK version code,Obtain through `Get App list`"
                     },
                     "apkName": {
                         "type": "string",
-                        "description": "Application name"
+                        "description": "Application name,Obtain through `Get App list`"
                     }
                 },
                 "required": [
@@ -2987,7 +3270,7 @@
                     },
                     "msg": {
                         "type": "string",
-                        "description": "message"
+                        "description": "Request return message"
                     },
                     "data": {
                         "type": "array",
@@ -2995,7 +3278,7 @@
                             "$ref": "#/components/schemas/AppCategoryVO",
                             "description": "com.wuyin.chameleon.common.model.wy.phone.res.AppCategoryVO"
                         },
-                        "description": "return data"
+                        "description": "Request return data"
                     },
                     "status": {
                         "type": "string",
@@ -3040,72 +3323,6 @@
                     }
                 }
             },
-            "PhoneAppListReqVO": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "type": "integer",
-                        "description": "Phone ID",
-                        "format": "int64"
-                    },
-                    "apkName": {
-                        "type": "string",
-                        "description": "Application name",
-                        "pattern": "^[^%]*$"
-                    },
-                    "onlyShowInstalled": {
-                        "type": "boolean",
-                        "description": "Only show installed applications",
-                        "default": false
-                    },
-                    "cateCode": {
-                        "type": "integer",
-                        "description": "Application category code",
-                        "format": "int64",
-                        "default": -1
-                    },
-                    "shelfStatus": {
-                        "type": "integer",
-                        "description": "Shelf status: 1=On shelf, 0=Off shelf"
-                    }
-                }
-            },
-            "RListApiRemoteTokenResVO": {
-                "type": "object",
-                "properties": {
-                    "traceId": {
-                        "type": "string",
-                        "description": "Request link ID"
-                    },
-                    "code": {
-                        "type": "integer",
-                        "description": "code"
-                    },
-                    "msg": {
-                        "type": "string",
-                        "description": "message"
-                    },
-                    "data": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/ApiRemoteTokenResVO",
-                            "description": "ApiRemoteTokenResVO"
-                        },
-                        "description": "return data"
-                    },
-                    "status": {
-                        "type": "string",
-                        "description": "Status, representing whether this is an instant completion or waiting state, finish or pending",
-                        "default": "finish"
-                    }
-                },
-                "required": [
-                    "traceId",
-                    "code",
-                    "msg",
-                    "status"
-                ]
-            },
             "TableDataInfoPhonePageListResVO": {
                 "type": "object",
                 "properties": {
@@ -3136,25 +3353,37 @@
                     }
                 }
             },
-            "ApiRemoteTokenReqVO": {
+            "PhoneAppListReqVO": {
                 "type": "object",
                 "properties": {
-                    "phoneIds": {
-                        "type": "array",
-                        "items": {
-                            "type": "integer"
-                        },
-                        "description": "List of phone IDs",
-                        "minItems": 1
+                    "id": {
+                        "type": "integer",
+                        "description": "Phone ID,obtain through `Get phone list` api",
+                        "format": "int64"
                     },
-                    "forceKick": {
+                    "apkName": {
+                        "type": "string",
+                        "description": "Application name",
+                        "pattern": "^[^%]*$"
+                    },
+                    "onlyShowInstalled": {
                         "type": "boolean",
-                        "description": "Whether to force kick out",
-                        "default": true
+                        "description": "Only show installed applications(default: false)",
+                        "default": false
+                    },
+                    "cateCode": {
+                        "type": "integer",
+                        "description": "Application category code,obtain through `Get app category list` api",
+                        "format": "int64",
+                        "default": -1
+                    },
+                    "shelfStatus": {
+                        "type": "integer",
+                        "description": "Shelf status: 1=On shelf, 0=Off shelf"
                     }
                 }
             },
-            "RApiUploadFileResVO": {
+            "RListApiRemoteTokenResVO": {
                 "type": "object",
                 "properties": {
                     "traceId": {
@@ -3167,11 +3396,15 @@
                     },
                     "msg": {
                         "type": "string",
-                        "description": "message"
+                        "description": "Request return message"
                     },
                     "data": {
-                        "$ref": "#/components/schemas/ApiUploadFileResVO",
-                        "description": "return data"
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/ApiRemoteTokenResVO",
+                            "description": "ApiRemoteTokenResVO"
+                        },
+                        "description": "Request return data"
                     },
                     "status": {
                         "type": "string",
@@ -3199,7 +3432,7 @@
                     },
                     "msg": {
                         "type": "string",
-                        "description": "message"
+                        "description": "Request return message"
                     },
                     "data": {
                         "type": "array",
@@ -3207,7 +3440,57 @@
                             "$ref": "#/components/schemas/PhoneResolutionListResVO",
                             "description": "PhoneResolutionListResVO"
                         },
-                        "description": "return data"
+                        "description": "Request return data"
+                    },
+                    "status": {
+                        "type": "string",
+                        "description": "Status, representing whether this is an instant completion or waiting state, finish or pending",
+                        "default": "finish"
+                    }
+                },
+                "required": [
+                    "traceId",
+                    "code",
+                    "msg",
+                    "status"
+                ]
+            },
+            "ApiRemoteTokenReqVO": {
+                "type": "object",
+                "properties": {
+                    "phoneIds": {
+                        "type": "array",
+                        "items": {
+                            "type": "integer"
+                        },
+                        "description": "List of phone IDs,obtain the id through `Get phone list` api",
+                        "minItems": 1
+                    },
+                    "forceKick": {
+                        "type": "boolean",
+                        "description": "Whether to force kick out",
+                        "default": true
+                    }
+                }
+            },
+            "RApiUploadFileResVO": {
+                "type": "object",
+                "properties": {
+                    "traceId": {
+                        "type": "string",
+                        "description": "Request link ID"
+                    },
+                    "code": {
+                        "type": "integer",
+                        "description": "code"
+                    },
+                    "msg": {
+                        "type": "string",
+                        "description": "Request return message"
+                    },
+                    "data": {
+                        "$ref": "#/components/schemas/ApiUploadFileResVO",
+                        "description": "Request return data"
                     },
                     "status": {
                         "type": "string",
@@ -3231,29 +3514,29 @@
                     },
                     "phoneId": {
                         "type": "integer",
-                        "description": "Phone ID",
+                        "description": "Phone ID,obtain through `Get phone list` api",
                         "format": "int64"
                     },
                     "uploadId": {
                         "type": "string",
-                        "description": "File unique identifier (MD5)"
+                        "description": "Upload Id for fragmented upload,The Upload Id obtained through the `Initialize upload task`"
                     },
                     "fileName": {
                         "type": "string",
-                        "description": "File name"
+                        "description": "File name,File name,The file name of the uploaded file"
                     },
                     "fileSize": {
                         "type": "integer",
-                        "description": "Total file size",
+                        "description": "File size,The total file size is supported",
                         "format": "int64"
                     },
                     "liveImageUrl": {
                         "type": "string",
-                        "description": "Live stream file image URL"
+                        "description": "The path of the live file image is used for display"
                     },
                     "uploadType": {
                         "type": "integer",
-                        "description": "File upload type: 1-Regular file, 2-Live stream file"
+                        "description": "File upload type: 1-Regular file, 2-Live stream file(default: 1-Regular file )"
                     },
                     "mergeList": {
                         "type": "array",
@@ -3266,38 +3549,6 @@
                 },
                 "required": [
                     "phoneId"
-                ]
-            },
-            "RUploadTaskInfoVO": {
-                "type": "object",
-                "properties": {
-                    "traceId": {
-                        "type": "string",
-                        "description": "Request link ID"
-                    },
-                    "code": {
-                        "type": "integer",
-                        "description": "code"
-                    },
-                    "msg": {
-                        "type": "string",
-                        "description": "message"
-                    },
-                    "data": {
-                        "$ref": "#/components/schemas/UploadTaskInfoVO",
-                        "description": "return data"
-                    },
-                    "status": {
-                        "type": "string",
-                        "description": "Status, representing whether this is an instant completion or waiting state, finish or pending",
-                        "default": "finish"
-                    }
-                },
-                "required": [
-                    "traceId",
-                    "code",
-                    "msg",
-                    "status"
                 ]
             },
             "RPhoneTaskStatusResVO": {
@@ -3313,11 +3564,11 @@
                     },
                     "msg": {
                         "type": "string",
-                        "description": "message"
+                        "description": "Request return message"
                     },
                     "data": {
                         "$ref": "#/components/schemas/PhoneTaskStatusResVO",
-                        "description": "return data"
+                        "description": "Request return data"
                     },
                     "status": {
                         "type": "string",
@@ -3337,77 +3588,77 @@
                 "properties": {
                     "id": {
                         "type": "integer",
-                        "description": "Phone ID",
+                        "description": "Phone ID, The `Get phone list` returns the ID contained in the data.",
                         "format": "int64"
                     },
                     "networkId": {
                         "type": "integer",
-                        "description": "Network ID",
+                        "description": "Network ID, The `Get network list` returns the ID contained in the data.If set, use the data of networkId, If not filled in, then use the transmitted network data to generate or modify the network data.",
                         "format": "int64"
                     },
                     "host": {
                         "type": "string",
-                        "description": "Proxy host"
+                        "description": "Proxy host, If a networkId is set, then the data corresponding to the networkId will be the primary source."
                     },
                     "port": {
                         "type": "integer",
-                        "description": "Proxy port"
+                        "description": "Proxy port, If a networkId is set, then the data corresponding to the networkId will be the primary source."
                     },
                     "account": {
                         "type": "string",
-                        "description": "Proxy account"
+                        "description": "Proxy account, If a networkId is set, then the data corresponding to the networkId will be the primary source."
                     },
                     "password": {
                         "type": "string",
-                        "description": "Proxy password"
+                        "description": "Proxy password, If a networkId is set, then the data corresponding to the networkId will be the primary source."
                     },
                     "type": {
                         "type": "string",
-                        "description": "Proxy type: 1.socks5 2.https 3.http"
+                        "description": "Proxy type: 1=socks5 2=https 3=http, If a networkId is set, then the data corresponding to the networkId will be the primary source."
                     },
                     "way": {
                         "type": "string",
-                        "description": "Usage method: 1.Static IP 2.Dynamic IP"
+                        "description": "Usage method: 1=Static IP 2=Dynamic IP, If a networkId is set, then the data corresponding to the networkId will be the primary source."
                     },
                     "region": {
                         "type": "string",
-                        "description": "Region"
+                        "description": "Proxy Region, If a networkId is set, then the data corresponding to the networkId will be the primary source."
                     },
                     "status": {
                         "type": "integer",
-                        "description": "Status"
+                        "description": "Proxy Check Status, If a networkId is set, then the data corresponding to the networkId will be the primary source."
                     },
                     "name": {
                         "type": "string",
-                        "description": "Network name"
+                        "description": "Network name, If a networkId is set, then the data corresponding to the networkId will be the primary source."
                     },
                     "ip": {
                         "type": "string",
-                        "description": "Actual IP address"
+                        "description": "Actual IP address, If a networkId is set, then the data corresponding to the networkId will be the primary source."
                     },
                     "countryName": {
                         "type": "string",
-                        "description": "Country name"
+                        "description": "Proxy city name, If a networkId is set, then the data corresponding to the networkId will be the primary source."
                     },
                     "countryCode": {
                         "type": "string",
-                        "description": "Country code"
+                        "description": "Proxy city code, If a networkId is set, then the data corresponding to the networkId will be the primary source."
                     },
                     "latitude": {
                         "type": "string",
-                        "description": "Latitude"
+                        "description": "Proxy Latitude, If a networkId is set, then the data corresponding to the networkId will be the primary source."
                     },
                     "longitude": {
                         "type": "string",
-                        "description": "Longitude"
+                        "description": "Proxy Longitude, If a networkId is set, then the data corresponding to the networkId will be the primary source."
                     },
                     "language": {
                         "type": "string",
-                        "description": "Language"
+                        "description": "Language, If a networkId is set, then the data corresponding to the networkId will be the primary source."
                     },
                     "timezone": {
                         "type": "string",
-                        "description": "Timezone"
+                        "description": "Proxy Timezone, If a networkId is set, then the data corresponding to the networkId will be the primary source."
                     },
                     "udp": {
                         "type": "integer",
@@ -3429,11 +3680,43 @@
                     },
                     "detectDataType": {
                         "type": "integer",
-                        "description": "Detection data type: 1-Follow IP 2-Custom"
+                        "description": "Detection data type: 1=Follow IP 2=Custom"
                     }
                 },
                 "required": [
                     "id"
+                ]
+            },
+            "RUploadTaskInfoVO": {
+                "type": "object",
+                "properties": {
+                    "traceId": {
+                        "type": "string",
+                        "description": "Request link ID"
+                    },
+                    "code": {
+                        "type": "integer",
+                        "description": "code"
+                    },
+                    "msg": {
+                        "type": "string",
+                        "description": "Request return message"
+                    },
+                    "data": {
+                        "$ref": "#/components/schemas/UploadTaskInfoVO",
+                        "description": "Request return data"
+                    },
+                    "status": {
+                        "type": "string",
+                        "description": "Status, representing whether this is an instant completion or waiting state, finish or pending",
+                        "default": "finish"
+                    }
+                },
+                "required": [
+                    "traceId",
+                    "code",
+                    "msg",
+                    "status"
                 ]
             },
             "UploadTaskInitReqVO": {
@@ -3445,28 +3728,28 @@
                     },
                     "totalSize": {
                         "type": "integer",
-                        "description": "Total file size in bytes (max 5GB)",
+                        "description": "File size,The total file size is supported, with a maximum of 5GB for file upload",
                         "minimum": 1,
                         "maximum": 5368709120
                     },
                     "chunkSize": {
                         "type": "integer",
-                        "description": "Chunk size in bytes (min 30MB, max 300MB)",
+                        "description": "Chunk size,Calculate the number of Chunks uploaded based on totalSize and chunkSize(min 30MB, max 300MB)",
                         "minimum": 31457280,
                         "maximum": 314572800
                     },
                     "fileName": {
                         "type": "string",
-                        "description": "File name (max 60 characters)",
+                        "description": "File name,The file name of the uploaded file (max 60 characters)",
                         "maxLength": 60
                     },
                     "uploadType": {
                         "type": "integer",
-                        "description": "Upload type: 1=APP upload, 2=Temporary file upload, 3=Advanced file import"
+                        "description": "Upload type: 1=Ordinary file upload,2=APP upload, 3=Advanced file import"
                     },
                     "phoneId": {
                         "type": "integer",
-                        "description": "Phone ID",
+                        "description": "Phone ID,obtain through `Get phone list` api",
                         "format": "int64"
                     }
                 },
@@ -3492,11 +3775,11 @@
                     },
                     "msg": {
                         "type": "string",
-                        "description": "message"
+                        "description": "Request return message"
                     },
                     "data": {
                         "$ref": "#/components/schemas/ApiPhoneFileDownloadResVO",
-                        "description": "return data"
+                        "description": "Request return data"
                     },
                     "status": {
                         "type": "string",
@@ -3511,21 +3794,34 @@
                     "status"
                 ]
             },
+            "PhoneReqVODelete": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "description": "Phone ID, The `Get phone list` returns the ID contained in the data.",
+                        "format": "int64"
+                    }
+                },
+                "required": [
+                    "id"
+                ]
+            },
             "ApiPhoneFileDownloadReqVO": {
                 "type": "object",
                 "properties": {
                     "phoneId": {
                         "type": "integer",
-                        "description": "Phone ID",
+                        "description": "Phone ID,obtain through `Get phone list` api",
                         "format": "int64"
                     },
                     "filePath": {
                         "type": "string",
-                        "description": "File directory path"
+                        "description": "File download path,The path for downloading the file"
                     },
                     "size": {
                         "type": "string",
-                        "description": "File size in bytes"
+                        "description": "File size in bytes,The size of the downloaded file"
                     }
                 },
                 "required": [
@@ -3547,11 +3843,11 @@
                     },
                     "msg": {
                         "type": "string",
-                        "description": "message"
+                        "description": "Request return message"
                     },
                     "data": {
                         "$ref": "#/components/schemas/ApiPhoneFileScanPageResVO",
-                        "description": "return data"
+                        "description": "Request return data"
                     },
                     "status": {
                         "type": "string",
@@ -3564,19 +3860,6 @@
                     "code",
                     "msg",
                     "status"
-                ]
-            },
-            "PhoneReqVODelete": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "type": "integer",
-                        "description": "Phone ID",
-                        "format": "int64"
-                    }
-                },
-                "required": [
-                    "id"
                 ]
             },
             "ApiPhoneFileScanReqVO": {
@@ -3592,12 +3875,12 @@
                     },
                     "phoneId": {
                         "type": "integer",
-                        "description": "Phone ID",
+                        "description": "Phone ID,obtain through `Get phone list` api",
                         "format": "int64"
                     },
                     "parentDir": {
                         "type": "string",
-                        "description": "Parent directory"
+                        "description": "Parent directory,Get all the file directories under this folder"
                     }
                 },
                 "required": [
@@ -3617,11 +3900,11 @@
                     },
                     "msg": {
                         "type": "string",
-                        "description": "message"
+                        "description": "Request return message"
                     },
                     "data": {
                         "$ref": "#/components/schemas/PhoneAdbInfoResVO",
-                        "description": "return data"
+                        "description": "Request return data"
                     },
                     "status": {
                         "type": "string",
@@ -3636,12 +3919,25 @@
                     "status"
                 ]
             },
+            "PhoneReqVOUpdate": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "description": "Phone ID, The `Get phone list` returns the ID contained in the data.",
+                        "format": "int64"
+                    }
+                },
+                "required": [
+                    "id"
+                ]
+            },
             "PhoneGetAdbInfoVO": {
                 "type": "object",
                 "properties": {
                     "id": {
                         "type": "integer",
-                        "description": "Phone ID",
+                        "description": "Phone ID,obtain through `Get phone list` api",
                         "format": "int64"
                     }
                 },
@@ -3662,11 +3958,11 @@
                     },
                     "msg": {
                         "type": "string",
-                        "description": "message"
+                        "description": "Request return message"
                     },
                     "data": {
                         "$ref": "#/components/schemas/ApiTaskResVO",
-                        "description": "return data"
+                        "description": "Request return data"
                     },
                     "status": {
                         "type": "string",
@@ -3679,32 +3975,6 @@
                     "code",
                     "msg",
                     "status"
-                ]
-            },
-            "PhoneReqVOUpdate": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "type": "integer",
-                        "description": "Phone ID",
-                        "format": "int64"
-                    }
-                },
-                "required": [
-                    "id"
-                ]
-            },
-            "PhoneReqVO": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "type": "integer",
-                        "description": "Phone ID",
-                        "format": "int64"
-                    }
-                },
-                "required": [
-                    "id"
                 ]
             },
             "RPhoneStartResVO": {
@@ -3720,11 +3990,11 @@
                     },
                     "msg": {
                         "type": "string",
-                        "description": "message"
+                        "description": "Request return message"
                     },
                     "data": {
                         "$ref": "#/components/schemas/PhoneStartResVO",
-                        "description": "return data"
+                        "description": "Request return data"
                     },
                     "status": {
                         "type": "string",
@@ -3737,6 +4007,19 @@
                     "code",
                     "msg",
                     "status"
+                ]
+            },
+            "PhoneReqVO": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "description": "Phone ID, The `Get phone list` returns the ID contained in the data.",
+                        "format": "int64"
+                    }
+                },
+                "required": [
+                    "id"
                 ]
             }
         },

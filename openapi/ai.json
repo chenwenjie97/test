@@ -455,7 +455,9 @@
 
                 },
                 "properties": {
-                    
+                    "empty": {
+                        "type": "boolean"
+                    }
                 }
             },
             "RespModelListRecordWyResult": {
@@ -1012,9 +1014,8 @@
                     "numImages": {
                         "type": "integer",
                         "format": "int32",
-                        "description": "Control the number of output images. Up to 4 sheets, default is 1 sheet",
-                        "maxLength": 4,
-                        "minLength": 1
+                        "description": "only support generate 1 image",
+                        "maxLength": 1
                     },
                     "imageUrls": {
                         "type": "array",
