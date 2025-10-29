@@ -84,7 +84,7 @@
                 ]
               },
               {
-                "group": "FileAndApp",
+                "group": "File & App",
                 "pages": [
                   "api-reference/pmock/get-app-list",
                   "api-reference/pmock/get-app-category-list",
